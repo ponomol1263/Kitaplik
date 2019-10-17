@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#EAEDF4"
+        tools:context=".MainActivity">
+
+        <View
+            android:background="#FFF"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/titleMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Film Bölümü"
+            android:textColor="#2E3691"
+            android:textSize="26sp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="30dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/titleLight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="14 Aug, 1999"
+            android:textColor="#9A9A9A"
+            android:textSize="16sp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="6dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/titleMedium" />
+
+        <HorizontalScrollView
+            android:id="@+id/horizontalScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="124dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/itemSlid"
+                    android:layout_width="300dp"
+                    android:layout_height="180dp"
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginRight="24dp"
+                    android:background="@drawable/bgitem"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="110dp"
+                        android:layout_height="140dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="22dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/kapak1" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/titleMedium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginTop="34dp"
+                            android:text="Exlusively"
+                            android:textColor="#FFF"
+                            android:textSize="22sp" />
+
+                        <TextView
+                            android:id="@+id/titleLight"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginTop="6dp"
+                            android:text="George Orwell"
+                            android:textColor="#A1A8FD"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/itemSlid"
+                    android:layout_width="300dp"
+                    android:layout_height="180dp"
+                    android:layout_marginRight="24dp"
+                    android:background="@drawable/bgitem"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="110dp"
+                        android:layout_height="140dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="22dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/kapak2" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/titleMedium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginTop="34dp"
+                            android:text="Exlusively"
+                            android:textColor="#FFF"
+                            android:textSize="22sp" />
+
+                        <TextView
+                            android:id="@+id/titleLight"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginTop="6dp"
+                            android:text="George Orwell"
+                            android:textColor="#A1A8FD"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/itemSlid"
+                    android:layout_width="300dp"
+                    android:layout_height="180dp"
+                    android:layout_marginRight="24dp"
+                    android:background="@drawable/bgitem"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="110dp"
+                        android:layout_height="140dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="22dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/kapak3" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/titleMedium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginTop="34dp"
+                            android:text="Exlusively"
+                            android:textColor="#FFF"
+                            android:textSize="22sp" />
+
+                        <TextView
+                            android:id="@+id/titleLight"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginTop="6dp"
+                            android:text="George Orwell"
+                            android:textColor="#A1A8FD"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </HorizontalScrollView>
+
+
+        <LinearLayout
+            android:id="@+id/add"
+            android:layout_marginTop="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:background="@drawable/bgbooksnew"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView"
+            app:layout_editor_absoluteY="404dp">
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="120dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="16dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/kapak4"
+                android:id="@+id/imageViewFilm" />
+
+            <TextView
+                android:id="@+id/addBook"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="60dp"
+                android:text="Film Ekle"
+                android:textColor="#2E3691"
+                android:textSize="22sp" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/read"
+            android:layout_marginTop="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:background="@drawable/bgbooksnew"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/add"
+            app:layout_editor_absoluteY="404dp">
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="120dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="16dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/kapak3" />
+
+            <TextView
+                android:id="@+id/readBook"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="60dp"
+                android:text="İzleyeceğim Filmler"
+                android:textColor="#2E3691"
+                android:textSize="22sp" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/finished"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="24dp"
+            android:background="@drawable/bgbooksnew"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/read"
+            app:layout_editor_absoluteY="404dp">
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="120dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="16dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/kapak5" />
+
+            <TextView
+                android:id="@+id/finishedBook"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="60dp"
+                android:text="İzlediğim Filmler"
+                android:textColor="#2E3691"
+                android:textSize="22sp" />
+
+
+        </LinearLayout>
+    </android.support.constraint.ConstraintLayout>
+
+</ScrollView>
