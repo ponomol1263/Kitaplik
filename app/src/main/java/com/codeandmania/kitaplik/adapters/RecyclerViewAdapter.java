@@ -68,7 +68,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         Book book = mData.get(i);
         holder.tvTitle.setText(book.getTitle());
         holder.tvAuthor.setText(book.getAuthors());
-        holder.tvPrice.setText(book.getPrice());
         holder.tvCategory.setText(book.getCategories());
 
         //load image from internet and set it into imageView using Glide
@@ -93,7 +92,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             tvTitle = itemView.findViewById(R.id.title);
             tvAuthor = itemView.findViewById(R.id.author);
             tvCategory = itemView.findViewById(R.id.category);
-            tvPrice = itemView.findViewById(R.id.price);
             container = itemView.findViewById(R.id.container);
 
 

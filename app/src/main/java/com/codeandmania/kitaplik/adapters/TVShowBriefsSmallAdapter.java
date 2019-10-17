@@ -22,10 +22,6 @@ import com.codeandmania.kitaplik.utils.Favourite;
 
 import java.util.List;
 
-/**
- * Created by hitanshu on 13/8/17.
- */
-
 public class TVShowBriefsSmallAdapter extends RecyclerView.Adapter<TVShowBriefsSmallAdapter.TVShowViewHolder> {
 
     private Context mContext;
@@ -56,10 +52,8 @@ public class TVShowBriefsSmallAdapter extends RecyclerView.Adapter<TVShowBriefsS
             holder.tvShowTitleTextView.setText("");
 
         if (Favourite.isTVShowFav(mContext, mTVShows.get(position).getId())) {
-            holder.tvShowFavImageButton.setImageResource(R.mipmap.ic_favorite_black_18dp);
             holder.tvShowFavImageButton.setEnabled(false);
         } else {
-            holder.tvShowFavImageButton.setImageResource(R.mipmap.ic_favorite_border_black_18dp);
             holder.tvShowFavImageButton.setEnabled(true);
         }
     }
@@ -101,7 +95,6 @@ public class TVShowBriefsSmallAdapter extends RecyclerView.Adapter<TVShowBriefsS
                 public void onClick(View view) {
                     view.performHapticFeedback(HapticFeedbackConstants.VIRTUAL_KEY);
                     Favourite.addTVShowToFav(mContext, mTVShows.get(getAdapterPosition()).getId(), mTVShows.get(getAdapterPosition()).getPosterPath(), mTVShows.get(getAdapterPosition()).getName());
-                    tvShowFavImageButton.setImageResource(R.mipmap.ic_favorite_black_18dp);
                     tvShowFavImageButton.setEnabled(false);
                 }
             });

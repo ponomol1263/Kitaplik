@@ -412,10 +412,8 @@ public class MovieDetailActivity extends AppCompatActivity {
         if (movieId == null) return;
         if (Favourite.isMovieFav(MovieDetailActivity.this, movieId)) {
             mFavImageButton.setTag(Constants.TAG_FAV);
-            mFavImageButton.setImageResource(R.mipmap.ic_favorite_white_24dp);
         } else {
             mFavImageButton.setTag(Constants.TAG_NOT_FAV);
-            mFavImageButton.setImageResource(R.mipmap.ic_favorite_border_white_24dp);
         }
         mFavImageButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -424,11 +422,9 @@ public class MovieDetailActivity extends AppCompatActivity {
                 if ((int) mFavImageButton.getTag() == Constants.TAG_FAV) {
                     Favourite.removeMovieFromFav(MovieDetailActivity.this, movieId);
                     mFavImageButton.setTag(Constants.TAG_NOT_FAV);
-                    mFavImageButton.setImageResource(R.mipmap.ic_favorite_border_white_24dp);
                 } else {
                     Favourite.addMovieToFav(MovieDetailActivity.this, movieId, posterPath, movieTitle);
                     mFavImageButton.setTag(Constants.TAG_FAV);
-                    mFavImageButton.setImageResource(R.mipmap.ic_favorite_white_24dp);
                 }
             }
         });

@@ -24,10 +24,6 @@ import com.codeandmania.kitaplik.utils.TVShowGenres;
 
 import java.util.List;
 
-/**
- * Created by hitanshu on 13/8/17.
- */
-
 public class TVShowBriefsLargeAdapter extends RecyclerView.Adapter<TVShowBriefsLargeAdapter.TVShowViewHolder> {
 
     private Context mContext;
@@ -67,10 +63,8 @@ public class TVShowBriefsLargeAdapter extends RecyclerView.Adapter<TVShowBriefsL
         setGenres(holder, mTVShows.get(position));
 
         if (Favourite.isTVShowFav(mContext, mTVShows.get(position).getId())) {
-            holder.tvShowFavImageButton.setImageResource(R.mipmap.ic_favorite_black_18dp);
             holder.tvShowFavImageButton.setEnabled(false);
         } else {
-            holder.tvShowFavImageButton.setImageResource(R.mipmap.ic_favorite_border_black_18dp);
             holder.tvShowFavImageButton.setEnabled(true);
         }
     }
@@ -131,7 +125,6 @@ public class TVShowBriefsLargeAdapter extends RecyclerView.Adapter<TVShowBriefsL
                 public void onClick(View view) {
                     view.performHapticFeedback(HapticFeedbackConstants.VIRTUAL_KEY);
                     Favourite.addTVShowToFav(mContext, mTVShows.get(getAdapterPosition()).getId(), mTVShows.get(getAdapterPosition()).getPosterPath(), mTVShows.get(getAdapterPosition()).getName());
-                    tvShowFavImageButton.setImageResource(R.mipmap.ic_favorite_black_18dp);
                     tvShowFavImageButton.setEnabled(false);
                 }
             });

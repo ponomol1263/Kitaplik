@@ -21,7 +21,6 @@
         android:checkableBehavior="single">
         <item
             android:id="@+id/nav_favorites"
-            android:icon="@mipmap/ic_favorite_black_24dp"
             android:iconTint="#FF0000"
             android:title="@string/favorites" />
     </group>

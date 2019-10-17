@@ -412,10 +412,8 @@ public class TVShowDetailActivity extends AppCompatActivity {
         if (tvShowId == null) return;
         if (Favourite.isTVShowFav(TVShowDetailActivity.this, tvShowId)) {
             mFavImageButton.setTag(Constants.TAG_FAV);
-            mFavImageButton.setImageResource(R.mipmap.ic_favorite_white_24dp);
         } else {
             mFavImageButton.setTag(Constants.TAG_NOT_FAV);
-            mFavImageButton.setImageResource(R.mipmap.ic_favorite_border_white_24dp);
         }
         mFavImageButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -424,11 +422,9 @@ public class TVShowDetailActivity extends AppCompatActivity {
                 if ((int) mFavImageButton.getTag() == Constants.TAG_FAV) {
                     Favourite.removeTVShowFromFav(TVShowDetailActivity.this, tvShowId);
                     mFavImageButton.setTag(Constants.TAG_NOT_FAV);
-                    mFavImageButton.setImageResource(R.mipmap.ic_favorite_border_white_24dp);
                 } else {
                     Favourite.addTVShowToFav(TVShowDetailActivity.this, tvShowId, posterPath, tvShowName);
                     mFavImageButton.setTag(Constants.TAG_FAV);
-                    mFavImageButton.setImageResource(R.mipmap.ic_favorite_white_24dp);
                 }
             }
         });

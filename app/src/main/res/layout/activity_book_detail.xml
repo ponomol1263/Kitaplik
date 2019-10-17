@@ -33,112 +33,102 @@
             </android.support.v7.widget.Toolbar>
 
 
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="230dp"
-                android:padding="10dp"
-                >
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="vertical">
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="200dp"
-                    android:orientation="vertical">
+               <LinearLayout
+                   android:orientation="horizontal"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:padding="10dp">
 
-                    <ImageView
-                        android:layout_width="100dp"
-                        android:layout_height="130dp"
-                        android:background="@drawable/loading_shape"
-                        android:id="@+id/aa_thumbnail"
-                        android:scaleType="centerCrop"/>
+                   <ImageView
+                       android:layout_width="100dp"
+                       android:layout_height="130dp"
+                       android:background="@drawable/loading_shape"
+                       android:id="@+id/aa_thumbnail"
+                       android:scaleType="centerCrop"/>
 
-                    <TextView
-                        android:id="@+id/aa_info"
-                        android:layout_width="70dp"
-                        android:layout_gravity="center"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/link_background"
-                        android:text="info"
-                        android:padding="5dp"
-                        android:textSize="15sp"
-                        android:textColor="#fff"
-                        android:textStyle="bold"
-                        android:gravity="center"
-                        android:layout_marginTop="5dp"/>
-                    <TextView
-                        android:id="@+id/aa_preview"
-                        android:layout_width="70dp"
-                        android:layout_gravity="center"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/link_background"
-                        android:text="Preview"
-                        android:padding="5dp"
-                        android:textSize="15sp"
-                        android:textColor="#fff"
-                        android:textStyle="bold"
-                        android:gravity="center"
-                        android:layout_marginTop="5dp"/>
+                   <LinearLayout
+                       android:layout_width="match_parent"
+                       android:layout_height="match_parent"
+                       android:orientation="vertical"
+                       android:layout_margin="8dp">
+
+
+                       <TextView
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:id="@+id/aa_book_name"
+                           android:text="Book Title"
+                           android:textStyle="bold"
+                           android:textSize="18sp" />
+
+                       <TextView
+                           android:layout_marginTop="3dp"
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:text="Category"
+                           android:id="@+id/aa_categorie"/>
 
 
 
-                </LinearLayout>
 
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:layout_margin="8dp">
-
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/aa_book_name"
-                        android:text="Book Title"
-                        android:textStyle="bold"
-                        android:textSize="18sp" />
-
-                    <TextView
-                        android:layout_marginTop="3dp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Category"
-                        android:id="@+id/aa_categorie"/>
-
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/aa_price"
-                        android:text="175 EG"
-                        android:layout_marginTop="5dp"
-                        android:background="@drawable/rating_background"
-                        android:textColor="#fff"
-                        android:textSize="15sp"
-                        android:textStyle="bold"
-                        android:drawableStart="@drawable/ic_attach_money_black_24dp"
-                        android:paddingEnd="5dp"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="author"
-                        android:layout_marginTop="5dp"
-                        android:id="@+id/aa_author"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Publish Date"
-                        android:layout_marginTop="5dp"
-                        android:id="@+id/aa_publish_date"/>
+                       <TextView
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:text="author"
+                           android:layout_marginTop="5dp"
+                           android:id="@+id/aa_author"/>
+                       <TextView
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:text="Publish Date"
+                           android:layout_marginTop="5dp"
+                           android:id="@+id/aa_publish_date"/>
 
 
 
-                </LinearLayout>
+                   </LinearLayout>
+
+               </LinearLayout>
+
+               <LinearLayout
+                   android:layout_gravity="center"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:orientation="horizontal">
+
+                   <Button
+                       android:id="@+id/aa_info"
+                       android:layout_width="wrap_content"
+                       android:layout_gravity="center_vertical"
+                       android:layout_height="wrap_content"
+                       android:background="@drawable/link_background"
+                       android:text="Okudum"
+                       android:padding="5dp"
+                       android:textColor="#fff"
+                       android:gravity="center"
+                       android:layout_marginRight="5dp"/>
+
+                   <Button
+                       android:layout_marginLeft="5dp"
+                       android:id="@+id/aa_preview"
+                       android:layout_width="wrap_content"
+                       android:layout_gravity="center_vertical"
+                       android:layout_height="wrap_content"
+                       android:background="@drawable/link_background"
+                       android:text="Okuyacağım"
+                       android:padding="5dp"
+                       android:textColor="#fff"
+                       android:gravity="center"/>
 
 
-            </LinearLayout>
+
+               </LinearLayout>
+           </LinearLayout>
 
         </android.support.design.widget.CollapsingToolbarLayout>
 
@@ -154,6 +144,10 @@
 
 
         <TextView
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
             android:textColor="#fff"
             android:text="Book Description"
             android:layout_width="match_parent"

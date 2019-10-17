@@ -22,9 +22,6 @@ import com.codeandmania.kitaplik.utils.Favourite;
 
 import java.util.List;
 
-/**
- * Created by hitanshu on 31/7/17.
- */
 
 public class MovieBriefsSmallAdapter extends RecyclerView.Adapter<MovieBriefsSmallAdapter.MovieViewHolder> {
 
@@ -56,10 +53,8 @@ public class MovieBriefsSmallAdapter extends RecyclerView.Adapter<MovieBriefsSma
             holder.movieTitleTextView.setText("");
 
         if (Favourite.isMovieFav(mContext, mMovies.get(position).getId())) {
-            holder.movieFavImageButton.setImageResource(R.mipmap.ic_favorite_black_18dp);
             holder.movieFavImageButton.setEnabled(false);
         } else {
-            holder.movieFavImageButton.setImageResource(R.mipmap.ic_favorite_border_black_18dp);
             holder.movieFavImageButton.setEnabled(true);
         }
     }
@@ -101,7 +96,6 @@ public class MovieBriefsSmallAdapter extends RecyclerView.Adapter<MovieBriefsSma
                 public void onClick(View view) {
                     view.performHapticFeedback(HapticFeedbackConstants.VIRTUAL_KEY);
                     Favourite.addMovieToFav(mContext, mMovies.get(getAdapterPosition()).getId(), mMovies.get(getAdapterPosition()).getPosterPath(), mMovies.get(getAdapterPosition()).getTitle());
-                    movieFavImageButton.setImageResource(R.mipmap.ic_favorite_black_18dp);
                     movieFavImageButton.setEnabled(false);
                 }
             });

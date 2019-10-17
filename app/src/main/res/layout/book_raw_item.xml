@@ -39,21 +39,7 @@
             android:maxLines="1"
             android:text="@string/category" />
 
-        <TextView
-            android:id="@+id/price"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
-            android:background="@drawable/price_background"
-            android:text="@string/price"
-            android:textSize="13sp"
-            android:textColor="#fff"
-            android:textStyle="bold"
-            android:gravity="center"
-            android:drawableStart="@drawable/ic_monetization_on_black_24dp" />
-
-        <TextView
+             <TextView
             android:id="@+id/author"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
