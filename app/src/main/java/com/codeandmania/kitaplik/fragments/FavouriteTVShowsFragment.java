@@ -13,7 +13,6 @@ import android.widget.LinearLayout;
 import com.codeandmania.kitaplik.R;
 import com.codeandmania.kitaplik.adapters.TVShowBriefsSmallAdapter;
 import com.codeandmania.kitaplik.network.tvshows.TVShowBrief;
-import com.codeandmania.kitaplik.utils.Favourite;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -57,16 +56,7 @@ public class FavouriteTVShowsFragment extends Fragment {
     }
 
     private void loadFavTVShows() {
-        List<TVShowBrief> favTVShowBriefs = Favourite.getFavTVShowBriefs(getContext());
-        if (favTVShowBriefs.isEmpty()) {
-            mEmptyLayout.setVisibility(View.VISIBLE);
-            return;
-        }
 
-        for (TVShowBrief tvShowBrief : favTVShowBriefs) {
-            mFavTVShows.add(tvShowBrief);
-        }
-        mFavTVShowsAdapter.notifyDataSetChanged();
     }
 
 }

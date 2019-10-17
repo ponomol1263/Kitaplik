@@ -18,7 +18,6 @@ import com.codeandmania.kitaplik.R;
 import com.codeandmania.kitaplik.activities.MovieDetailActivity;
 import com.codeandmania.kitaplik.network.movies.MovieBrief;
 import com.codeandmania.kitaplik.utils.Constants;
-import com.codeandmania.kitaplik.utils.Favourite;
 
 import java.util.List;
 
@@ -52,11 +51,7 @@ public class MovieBriefsSmallAdapter extends RecyclerView.Adapter<MovieBriefsSma
         else
             holder.movieTitleTextView.setText("");
 
-        if (Favourite.isMovieFav(mContext, mMovies.get(position).getId())) {
-            holder.movieFavImageButton.setEnabled(false);
-        } else {
-            holder.movieFavImageButton.setEnabled(true);
-        }
+
     }
 
     @Override
@@ -95,7 +90,7 @@ public class MovieBriefsSmallAdapter extends RecyclerView.Adapter<MovieBriefsSma
                 @Override
                 public void onClick(View view) {
                     view.performHapticFeedback(HapticFeedbackConstants.VIRTUAL_KEY);
-                    Favourite.addMovieToFav(mContext, mMovies.get(getAdapterPosition()).getId(), mMovies.get(getAdapterPosition()).getPosterPath(), mMovies.get(getAdapterPosition()).getTitle());
+                   // Favourite.addMovieToFav(mContext, mMovies.get(getAdapterPosition()).getId(), mMovies.get(getAdapterPosition()).getPosterPath(), mMovies.get(getAdapterPosition()).getTitle());
                     movieFavImageButton.setEnabled(false);
                 }
             });

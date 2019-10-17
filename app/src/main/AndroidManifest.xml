@@ -15,7 +15,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".activities.BookList"></activity>
+        <activity android:name=".activities.NewMovList"></activity>
+        <activity android:name=".activities.OldMovList" />
+        <activity android:name=".activities.BookList" />
         <activity android:name=".activities.BookDetail" />
         <activity
             android:name=".SplashAc"

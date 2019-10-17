@@ -15,6 +15,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.HapticFeedbackConstants;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -29,6 +30,7 @@ import com.codeandmania.kitaplik.adapters.MovieBriefsSmallAdapter;
 import com.codeandmania.kitaplik.adapters.MovieCastsAdapter;
 import com.codeandmania.kitaplik.adapters.VideoAdapter;
 import com.codeandmania.kitaplik.broadcastreceivers.ConnectivityBroadcastReceiver;
+import com.codeandmania.kitaplik.database.DatabaseHelper;
 import com.codeandmania.kitaplik.network.ApiClient;
 import com.codeandmania.kitaplik.network.ApiInterface;
 import com.codeandmania.kitaplik.network.movies.Genre;
@@ -40,7 +42,7 @@ import com.codeandmania.kitaplik.network.movies.SimilarMoviesResponse;
 import com.codeandmania.kitaplik.network.videos.Video;
 import com.codeandmania.kitaplik.network.videos.VideosResponse;
 import com.codeandmania.kitaplik.utils.Constants;
-import com.codeandmania.kitaplik.utils.Favourite;
+import com.codeandmania.kitaplik.utils.Film;
 import com.codeandmania.kitaplik.utils.NetworkConnection;
 import com.wang.avi.AVLoadingIndicatorView;
 
@@ -111,6 +113,8 @@ public class MovieDetailActivity extends AppCompatActivity {
     private Call<VideosResponse> mMovieTrailersCall;
     private Call<MovieCreditsResponse> mMovieCreditsCall;
     private Call<SimilarMoviesResponse> mSimilarMoviesCall;
+    DatabaseHelper db;
+    Movie mov;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -123,7 +127,7 @@ public class MovieDetailActivity extends AppCompatActivity {
 
         Intent receivedIntent = getIntent();
         mMovieId = receivedIntent.getIntExtra(Constants.MOVIE_ID, -1);
-
+        db = new DatabaseHelper(getApplicationContext());
         if (mMovieId == -1) finish();
 
         mCollapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.toolbar_layout);
@@ -193,6 +197,23 @@ public class MovieDetailActivity extends AppCompatActivity {
         mSimilarMoviesAdapter = new MovieBriefsSmallAdapter(MovieDetailActivity.this, mSimilarMovies);
         mSimilarMoviesRecyclerView.setAdapter(mSimilarMoviesAdapter);
         mSimilarMoviesRecyclerView.setLayoutManager(new LinearLayoutManager(MovieDetailActivity.this, LinearLayoutManager.HORIZONTAL, false));
+        Button izledim = findViewById(R.id.izledim);
+        Button izleyecek = findViewById(R.id.izleyecek);
+
+        izledim.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                db.addOldMov(new Film(mov.getId(),mov.getTitle(),mov.getPosterPath()));;
+
+            }
+        });
+        izleyecek.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                db.addNewMov(new Film(mov.getId(),mov.getTitle(),mov.getPosterPath()));
+
+            }
+        });
 
         if (NetworkConnection.isConnected(MovieDetailActivity.this)) {
             isActivityLoaded = true;
@@ -271,6 +292,8 @@ public class MovieDetailActivity extends AppCompatActivity {
                 }
 
                 if (response.body() == null) return;
+
+                mov = response.body();
 
                 mAppBarLayout.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
                     @Override
@@ -410,22 +433,12 @@ public class MovieDetailActivity extends AppCompatActivity {
 
     private void setImageButtons(final Integer movieId, final String posterPath, final String movieTitle, final String movieTagline, final String imdbId, final String homepage) {
         if (movieId == null) return;
-        if (Favourite.isMovieFav(MovieDetailActivity.this, movieId)) {
-            mFavImageButton.setTag(Constants.TAG_FAV);
-        } else {
-            mFavImageButton.setTag(Constants.TAG_NOT_FAV);
-        }
+
         mFavImageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 view.performHapticFeedback(HapticFeedbackConstants.VIRTUAL_KEY);
-                if ((int) mFavImageButton.getTag() == Constants.TAG_FAV) {
-                    Favourite.removeMovieFromFav(MovieDetailActivity.this, movieId);
-                    mFavImageButton.setTag(Constants.TAG_NOT_FAV);
-                } else {
-                    Favourite.addMovieToFav(MovieDetailActivity.this, movieId, posterPath, movieTitle);
-                    mFavImageButton.setTag(Constants.TAG_FAV);
-                }
+
             }
         });
         mShareImageButton.setOnClickListener(new View.OnClickListener() {

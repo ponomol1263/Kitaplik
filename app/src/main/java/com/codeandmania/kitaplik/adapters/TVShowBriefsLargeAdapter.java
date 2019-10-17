@@ -19,7 +19,6 @@ import com.codeandmania.kitaplik.R;
 import com.codeandmania.kitaplik.activities.TVShowDetailActivity;
 import com.codeandmania.kitaplik.network.tvshows.TVShowBrief;
 import com.codeandmania.kitaplik.utils.Constants;
-import com.codeandmania.kitaplik.utils.Favourite;
 import com.codeandmania.kitaplik.utils.TVShowGenres;
 
 import java.util.List;
@@ -62,11 +61,7 @@ public class TVShowBriefsLargeAdapter extends RecyclerView.Adapter<TVShowBriefsL
 
         setGenres(holder, mTVShows.get(position));
 
-        if (Favourite.isTVShowFav(mContext, mTVShows.get(position).getId())) {
-            holder.tvShowFavImageButton.setEnabled(false);
-        } else {
-            holder.tvShowFavImageButton.setEnabled(true);
-        }
+
     }
 
     @Override
@@ -124,7 +119,7 @@ public class TVShowBriefsLargeAdapter extends RecyclerView.Adapter<TVShowBriefsL
                 @Override
                 public void onClick(View view) {
                     view.performHapticFeedback(HapticFeedbackConstants.VIRTUAL_KEY);
-                    Favourite.addTVShowToFav(mContext, mTVShows.get(getAdapterPosition()).getId(), mTVShows.get(getAdapterPosition()).getPosterPath(), mTVShows.get(getAdapterPosition()).getName());
+                    //Favourite.addTVShowToFav(mContext, mTVShows.get(getAdapterPosition()).getId(), mTVShows.get(getAdapterPosition()).getPosterPath(), mTVShows.get(getAdapterPosition()).getName());
                     tvShowFavImageButton.setEnabled(false);
                 }
             });

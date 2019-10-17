@@ -1,10 +1,12 @@
 package com.codeandmania.kitaplik;
 
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.codeandmania.kitaplik.activities.GirisActivity;
+import com.codeandmania.kitaplik.database.DatabaseHelper;
 
 public class SplashAc extends AppCompatActivity {
 

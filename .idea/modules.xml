@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Kitaplik.iml" filepath="$PROJECT_DIR$/Kitaplik.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/Kitaplik-app.iml" filepath="$PROJECT_DIR$/app/Kitaplik-app.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

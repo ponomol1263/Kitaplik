@@ -41,7 +41,6 @@ import com.codeandmania.kitaplik.network.tvshows.TVShowCreditsResponse;
 import com.codeandmania.kitaplik.network.videos.Video;
 import com.codeandmania.kitaplik.network.videos.VideosResponse;
 import com.codeandmania.kitaplik.utils.Constants;
-import com.codeandmania.kitaplik.utils.Favourite;
 import com.codeandmania.kitaplik.utils.NetworkConnection;
 import com.wang.avi.AVLoadingIndicatorView;
 
@@ -410,22 +409,12 @@ public class TVShowDetailActivity extends AppCompatActivity {
 
     private void setImageButtons(final Integer tvShowId, final String posterPath, final String tvShowName, final String homepage) {
         if (tvShowId == null) return;
-        if (Favourite.isTVShowFav(TVShowDetailActivity.this, tvShowId)) {
-            mFavImageButton.setTag(Constants.TAG_FAV);
-        } else {
-            mFavImageButton.setTag(Constants.TAG_NOT_FAV);
-        }
+
         mFavImageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 view.performHapticFeedback(HapticFeedbackConstants.VIRTUAL_KEY);
-                if ((int) mFavImageButton.getTag() == Constants.TAG_FAV) {
-                    Favourite.removeTVShowFromFav(TVShowDetailActivity.this, tvShowId);
-                    mFavImageButton.setTag(Constants.TAG_NOT_FAV);
-                } else {
-                    Favourite.addTVShowToFav(TVShowDetailActivity.this, tvShowId, posterPath, tvShowName);
-                    mFavImageButton.setTag(Constants.TAG_FAV);
-                }
+
             }
         });
         mShareImageButton.setOnClickListener(new View.OnClickListener() {

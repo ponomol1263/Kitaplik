@@ -13,7 +13,6 @@ import android.widget.LinearLayout;
 import com.codeandmania.kitaplik.R;
 import com.codeandmania.kitaplik.adapters.MovieBriefsSmallAdapter;
 import com.codeandmania.kitaplik.network.movies.MovieBrief;
-import com.codeandmania.kitaplik.utils.Favourite;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -57,16 +56,7 @@ public class FavouriteMoviesFragment extends Fragment {
     }
 
     private void loadFavMovies() {
-        List<MovieBrief> favMovieBriefs = Favourite.getFavMovieBriefs(getContext());
-        if (favMovieBriefs.isEmpty()) {
-            mEmptyLayout.setVisibility(View.VISIBLE);
-            return;
-        }
 
-        for (MovieBrief movieBrief : favMovieBriefs) {
-            mFavMovies.add(movieBrief);
-        }
-        mFavMoviesAdapter.notifyDataSetChanged();
     }
 
 }
